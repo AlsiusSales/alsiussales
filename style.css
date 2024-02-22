@@ -1,0 +1,215 @@
+html{
+    background-image: url("thumbs/1111606.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+}
+
+h1{
+    padding-top: 100px;
+    text-align: center;
+    font-size: 6vw;
+    font-Family: "Candara", sans-serif;
+    font-weight: 700;
+    color: #FFF;
+}
+h2{
+    margin-top: -4vw;
+    text-align: center;
+    font-size: 2vw;
+    font-family: "Candara", sans-serif;
+    font-weight: 500;
+    color: #5CC0FF;
+}
+
+#drops-for-sale{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 80px;
+}
+
+
+.drops-containers {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    .drops-containers {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }}
+
+.item-card{
+    margin: 5px;
+}
+p{
+    font-family: "Candara", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px #000;
+}
+#box-top{
+    display: flex;
+    flex-direction: row;
+    width: 240px;
+    height: 50px;
+    background-color: rgba(11, 16, 25, 0.96);
+    outline: 1px solid #4c4c4c;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+#drop-thumbnail{
+    outline: 1px solid #4c4c4c;
+    border-radius: 5px;
+    margin: 7px;
+}
+#text-box{
+    width: 70%;
+}
+#drop-name{
+    margin-top: 7px;
+}
+#drop-material{
+    margin-top: -8px;
+}
+#drop-x{
+    margin-top: 8px;
+    margin-bottom: 28px;
+    align-self: flex-start;
+}
+#box-bottom{ 
+    width: 240px;
+    height: auto;
+    background-color: rgba(11, 16, 25, 0.96);
+    outline: 1px solid #4c4c4c;
+    border-radius: 5px;
+}
+#drop-card{
+    padding:0 5 10 5;
+}
+#resis{
+    margin-top: -7px;
+    display: flex;
+    flex-direction: row;
+}
+#damagepanel{
+    margin-top: -7px;
+    display: flex;
+    flex-direction: row;
+    height: 18px;
+}
+#secondary{
+    margin-top: 2px;
+}
+#bonus{
+    margin-top: 4px;
+    margin-bottom: 4px;
+} 
+#drop-info-armor{
+    padding-top: 7px;
+    padding-left: 4px;
+    margin-top: 0px;
+}
+#resis-thumbnail{
+    display: flex;
+    flex-direction: column;
+    height: 18px;
+    margin-bottom: 1px;
+}
+#dmgtype-thumbnail{
+    height: 17px;
+    margin-bottom: 1px;
+    margin-left: px;
+}
+#dmgnumber{
+    height: 18px;
+    margin-top: 0;
+    margin-left: 3px;
+}
+#drop-info-resis{
+    margin: 0 0 0 3;
+    height: 19px;
+}
+#drop-info-secondary{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    margin: 0px;
+}
+#drop-info-class{
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    margin: 0;
+    height: 12px;
+}
+#classA, #classB, #description{
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+#enhancement{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 92% 8%;
+    align-items: center;
+}
+.legendary{
+    color: #EE4000;
+}
+.epic{
+    color: #e88cff;
+}
+.magical{
+    color: #7dff81;
+}
+.special{
+    color: #EE4000;
+}
+.normal{
+    color: #FFF;
+}
+.bounded{
+    color: #984f33;
+}
+.yellow-text{
+    color: #FF8;
+}
+.white-text{
+    color: #FFF;
+}
+.gray-text{
+    color: #BEBEBE;
+}
+.bonus-text{
+    color: #5CC0FF;
+}
+.enhancedno{
+    color: #6b6b6b;
+}
+.enhancedyes{
+    color: #5CC0FF;
+}
+#price{
+    margin-top: 13px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 17px;
+    font-family: "Candara", sans-serif;
+    font-weight: 500;
+    color: #FFF;
+
+}
