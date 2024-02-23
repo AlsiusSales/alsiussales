@@ -1,6 +1,5 @@
 import itemJson from './droplist.json' assert {type: 'json'};
 
-
 function renderMagicWeapon(param){
     document.getElementById(itemJson.droplist[param].setid).innerHTML +=`
                     <div id="item${itemJson.droplist[param].id}" class="item-card">
@@ -39,8 +38,8 @@ function renderMagicWeapon(param){
                                 <p id="drop-info-secondary" class="${itemJson.droplist[param].rarity}">${itemJson.droplist[param].rarity}</p>
                             </div>
                         </div>
-                        <p id="price">${itemJson.droplist[param].price} Mgs</p>
-                    </div>
+                        <p id="price">${itemJson.droplist[param].owner} - ${itemJson.droplist[param].price} Mgs</p>                    
+                        </div>
 `}
 function renderEpicWeapon(param){
     document.getElementById(itemJson.droplist[param].setid).innerHTML +=`
@@ -81,7 +80,7 @@ function renderEpicWeapon(param){
                                 <p id="drop-info-secondary" class="${itemJson.droplist[param].rarity}">${itemJson.droplist[param].rarity}</p>
                             </div>
                         </div>
-                        <p id="price">${itemJson.droplist[param].price} Mgs</p>
+                        <p id="price">"${itemJson.droplist[param].owner}" - ${itemJson.droplist[param].price} Mgs</p>
                     </div>
 `}
 function renderLegendaryWeapon(param){
@@ -124,7 +123,7 @@ function renderLegendaryWeapon(param){
                                 <p id="drop-info-secondary" class="${itemJson.droplist[param].rarity}">${itemJson.droplist[param].rarity}</p>
                             </div>
                         </div>
-                        <p id="price">${itemJson.droplist[param].price} Mgs</p>
+                        <p id="price">${itemJson.droplist[param].owner} - ${itemJson.droplist[param].price} Mgs</p>
                     </div>
 `}
 
@@ -182,11 +181,15 @@ function renderLegendaryArmor(param){
                             <p id="drop-info-secondary" class="${itemJson.droplist[param].rarity}">${itemJson.droplist[param].rarity}</p>
                         </div>
                     </div>
-                    <p id="price">${itemJson.droplist[param].price} Mgs</p>
-                  </div>
+                    <p id="price">"${itemJson.droplist[param].owner}" - ${itemJson.droplist[param].price} Mgs</p>                  
+                    </div>
 `}
 
 renderMagicWeapon(0)
 renderMagicWeapon(1)
 renderEpicWeapon(2)
 renderLegendaryArmor(3)
+renderMagicWeapon(4)
+renderLegendaryArmor(7)
+renderEpicWeapon(6)
+renderLegendaryArmor(7)
