@@ -25,15 +25,12 @@ h2{
     font-family: "Candara", sans-serif;
     font-weight: 500;
     color: #5CC0FF;
-    padding-bottom: 80px;
-}
-#header{
-    height: 40vh;
 }
 
 #drops-for-sale{
-    width: 75%; 
-    background-color: rgba(0, 0, 0, 0.6);
+    width: 75%;
+    margin-top: 80px; 
+    background-color: rgba(0, 0, 0, 0.4);
     
 }
 
