@@ -4,36 +4,62 @@ html{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 body{
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     margin: 0;
 }
-
-h1{
-    padding-top: 100px;
-    text-align: center;
-    font-size: 6vw;
-    font-Family: "Candara", sans-serif;
-    font-weight: 700;
-    color: #FFF;
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    left:0;
+    display:flex;
+    background-color:#0e0e0e;
+    justify-content:center;
+    align-items:center;
+    z-index:99;
+}
+#logoalsius{
+    height:30px;
+}
+ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#0e0e0e;
+    font-family:'Heebo',sans-serif;
+    font-weight:600;
+    font-size:18px;
+    padding-right:30px;
+}  
+li{
+    float:right;
+}   
+li a{
+    display:block;
+    color:#f1f1f1;
+    text-align:center;
+    padding:18px 26px;
+    text-decoration:none;
+} 
+li a:hover{
+    color:#5CC0FF;
 }
 h2{
-    margin-top: -4vw;
+    padding-top: 150px;
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
     font-family: "Candara", sans-serif;
-    font-weight: 500;
-    color: #5CC0FF;
+    font-weight: 300;
+    color: #fff;
 }
-
 #drops-for-sale{
     width: 75%;
-    margin-top: 80px; 
-    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 80px;
+    background-color: rgba(0, 0, 0, 0.8);
     
 }
-
 .drops-containers {
     padding-left: 20%;
     padding-right: 5%;
@@ -61,7 +87,6 @@ h2{
         justify-self: center;
     }
 }
-
 @media screen and (max-width: 1100px) {
     #drops-for-sale{
         width: 75%;
@@ -80,11 +105,10 @@ h2{
         justify-items: center;
     }
 }
-
 @media screen and (max-width: 900px) {
 
     #drops-for-sale{
-        width: 75%;
+        width: 70%;
         margin-top: 80px; 
         background-color: rgba(0, 0, 0, 0.7);
         
@@ -108,15 +132,14 @@ h2{
         color: #FFF;
     }
     h2{
-        margin-top: -4vw;
-        text-align: center;
-        font-size: 15px;
-        font-family: "Candara", sans-serif;
-        font-weight: 500;
-        color: #5CC0FF;
+        padding-top: 150px;
+    text-align: center;
+    font-size: 23px;
+    font-family: "Candara", sans-serif;
+    font-weight: 300;
+    color: #fff;
     }
 }
-
 .item-card{
     margin: 5px;
 }
