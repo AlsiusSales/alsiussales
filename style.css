@@ -228,6 +228,7 @@ p{
     height: 18px;
     margin-top: 0;
     margin-left: 3px;
+    padding-right: 7px;
 }
 #drop-info-resis{
     margin: 0 0 0 3;
@@ -296,9 +297,9 @@ p{
     margin-top: 10px;
     margin-bottom: 40px;
     text-align: center;
-    font-size: 17px;
+    font-size: 14px;
     font-family: "Candara", sans-serif;
     font-weight: 500;
     color: #FFF;
-
+    text-align: center;
 }

@@ -19,6 +19,8 @@ ALLITEMS.forEach(item => {
                             <div id="damagepanel">
                                 <img id="dmgtype-thumbnail" src="${item.dmgtype0}" alt=""> 
                                 <p id="dmgnumber" class="yellow-text">${item.dmg0}</p>
+                                <img id="dmgtype-thumbnail" src="${item.dmgtype1}" alt=""> 
+                                <p id="dmgnumber" class="yellow-text">${item.dmg1}</p>
                             </div>
                             <div id="secondary">
                                 <p id="drop-info-secondary" class="white-text"> Category: ${item.cat}</p>
@@ -60,6 +62,8 @@ ALLITEMS.forEach(item => {
                                 <div id="damagepanel">
                                     <img id="dmgtype-thumbnail" src="${item.dmgtype0}" alt=""> 
                                     <p id="dmgnumber" class="yellow-text">${item.dmg0}</p>
+                                    <img id="dmgtype-thumbnail" src="${item.dmgtype1}" alt=""> 
+                                    <p id="dmgnumber" class="yellow-text">${item.dmg1}</p>
                                 </div>
                                 <div id="secondary">
                                     <p id="drop-info-secondary" class="white-text"> Category: ${item.cat}</p>
@@ -102,6 +106,8 @@ ALLITEMS.forEach(item => {
                                 <div id="damagepanel">
                                     <img id="dmgtype-thumbnail" src="${item.dmgtype0}" alt=""> 
                                     <p id="dmgnumber" class="yellow-text">${item.dmg0}</p>
+                                    <img id="dmgtype-thumbnail" src="${item.dmgtype1}" alt=""> 
+                                    <p id="dmgnumber" class="yellow-text">${item.dmg1}</p>
                                 </div>
                                 <div id="secondary">
                                     <p id="drop-info-secondary" class="white-text"> Category: ${item.cat}</p>
