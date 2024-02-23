@@ -28,7 +28,7 @@ h2{
 }
 
 #drops-for-sale{
-    width: 80%;
+    width: 75%;
     margin-top: 80px; 
     background-color: rgba(0, 0, 0, 0.7);
     
@@ -36,6 +36,7 @@ h2{
 
 .drops-containers {
     padding-left: 20%;
+    padding-right: 5%;
     padding-top: 60px;
     padding-bottom: 40px;
     display: grid;
@@ -63,7 +64,7 @@ h2{
 
 @media screen and (max-width: 1100px) {
     #drops-for-sale{
-        width: 80%;
+        width: 75%;
         margin-top: 80px; 
         background-color: rgba(0, 0, 0, 0.7);
         
