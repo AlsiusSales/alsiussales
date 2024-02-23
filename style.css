@@ -73,19 +73,18 @@ h2{
 @media screen and (max-width: 1700px) {
 
     #drops-for-sale{
-        width: 90%;
+        width: 82%;
         margin-top: 80px; 
         background-color: rgba(0, 0, 0, 0.7);
         
     }
     .drops-containers {
-        padding-left: 10%;
+        padding-left: 13%;
         padding-top: 60px;
         padding-bottom: 40px;
         display: grid;
         grid-template-columns: 30% 30% 30%;
         justify-items: center;
-        justify-self: center;
     }
 }
 @media screen and (max-width: 1100px) {
