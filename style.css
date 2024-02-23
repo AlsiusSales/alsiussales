@@ -6,7 +6,7 @@ html{
 }
 
 body{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     margin: 0;
 }
 
@@ -30,7 +30,7 @@ h2{
 #drops-for-sale{
     width: 75%;
     margin-top: 80px; 
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.4);
     
 }
 
