@@ -21,6 +21,7 @@ nav{
 }
 #logoalsius{
     height:30px;
+    margin-left: 21px;
 }
 ul{
     list-style-type:none;
@@ -107,14 +108,13 @@ h2{
 }
 @media screen and (max-width: 900px) {
 
-    #drops-for-sale{
+#drops-for-sale{
         width: 70%;
         margin-top: 80px; 
         background-color: rgba(0, 0, 0, 0.7);
         
-    }
-
-    .drops-containers {
+}
+.drops-containers {
         
         padding-left: 25%;
         padding-top: 40px;
@@ -122,23 +122,24 @@ h2{
         display: grid;
         grid-template-columns: 70%;
         justify-items: center;
-    }
-    h1{
+}
+h1{
         padding-top: 100px;
         text-align: center;
         font-size: 40px;
         font-Family: "Candara", sans-serif;
         font-weight: 700;
         color: #FFF;
-    }
-    h2{
+}
+h2{
         padding-top: 150px;
     text-align: center;
     font-size: 23px;
     font-family: "Candara", sans-serif;
     font-weight: 300;
     color: #fff;
-    }
+}
+
 }
 .item-card{
     margin: 5px;
