@@ -80,7 +80,7 @@ function renderEpicWeapon(param){
                                 <p id="drop-info-secondary" class="${itemJson.droplist[param].rarity}">${itemJson.droplist[param].rarity}</p>
                             </div>
                         </div>
-                        <p id="price">"${itemJson.droplist[param].owner}" - ${itemJson.droplist[param].price} Mgs</p>
+                        <p id="price">${itemJson.droplist[param].owner} - ${itemJson.droplist[param].price} Mgs</p>                    
                     </div>
 `}
 function renderLegendaryWeapon(param){
@@ -123,7 +123,7 @@ function renderLegendaryWeapon(param){
                                 <p id="drop-info-secondary" class="${itemJson.droplist[param].rarity}">${itemJson.droplist[param].rarity}</p>
                             </div>
                         </div>
-                        <p id="price">${itemJson.droplist[param].owner} - ${itemJson.droplist[param].price} Mgs</p>
+                        <p id="price">${itemJson.droplist[param].owner} - ${itemJson.droplist[param].price} Mgs</p>                    
                     </div>
 `}
 
@@ -181,7 +181,7 @@ function renderLegendaryArmor(param){
                             <p id="drop-info-secondary" class="${itemJson.droplist[param].rarity}">${itemJson.droplist[param].rarity}</p>
                         </div>
                     </div>
-                    <p id="price">"${itemJson.droplist[param].owner}" - ${itemJson.droplist[param].price} Mgs</p>                  
+                    <p id="price">${itemJson.droplist[param].owner} - ${itemJson.droplist[param].price} Mgs</p>                    
                     </div>
 `}
 
