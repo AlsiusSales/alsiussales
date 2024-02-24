@@ -54,12 +54,34 @@ h2{
     font-family: "Candara", sans-serif;
     font-weight: 300;
     color: #fff;
+    margin-bottom: 80px;
+}
+#buttons-filter{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    background-color: #fff;
+}
+#buttons-filter a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
+    text-decoration: none;
+    color: #0e0e0e;
+    font-family: "Candara", sans-serif;
+    font-weight: 900;
+}
+#buttons-filter a:hover{
+    background-color: #5CC0FF;
 }
 #drops-for-sale{
     width: 75%;
-    margin-top: 80px;
     background-color: rgba(0, 0, 0, 0.8);
-    
 }
 .drops-containers {
     padding-left: 20%;
@@ -74,7 +96,6 @@ h2{
 
     #drops-for-sale{
         width: 82%;
-        margin-top: 80px; 
         background-color: rgba(0, 0, 0, 0.7);
         
     }
@@ -90,7 +111,6 @@ h2{
 @media screen and (max-width: 1100px) {
     #drops-for-sale{
         width: 75%;
-        margin-top: 80px; 
         background-color: rgba(0, 0, 0, 0.7);
         
     }
@@ -109,7 +129,6 @@ h2{
 
 #drops-for-sale{
         width: 70%;
-        margin-top: 80px; 
         background-color: rgba(0, 0, 0, 0.7);
         
 }
