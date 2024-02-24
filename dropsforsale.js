@@ -1,6 +1,9 @@
 import itemJson from './droplist.json' assert {type: 'json'};
-
 const ALLITEMS = itemJson.droplist
+
+
+//primer renderizada de todos los items
+
 ALLITEMS.forEach(item => { 
     if(item.type == "weapon" && item.rarity == "Magical") {
    document.getElementById(item.setid).innerHTML +=`
@@ -442,6 +445,8 @@ else if(item.type == "armor" && item.rarity == "Legendary") {
    `}
 })
 
+//creacion de event listeners para cada boton del hmtl
+
 let allButton = document.getElementById("button-all");
 allButton.addEventListener("click", renderAll);
 
@@ -464,7 +469,7 @@ let lockButton = document.getElementById("button-warlock");
 lockButton.addEventListener("click", renderWarlock);
 
 
-
+//funciones para renderizar los items pertenecientes a un grupo dependiendo del boton que se toca
 
 function renderAll() {
     document.getElementById("drops-for-sale").innerHTML =``,
