@@ -141,6 +141,13 @@ h2{
         grid-template-columns: 70%;
         justify-items: center;
 }
+#buttons-filter{
+    padding-top: 13px;
+}
+#buttons-filter a{
+    font-size: 13px;
+    padding-top: 15px;
+}
 h1{
         padding-top: 100px;
         text-align: center;
