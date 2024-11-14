@@ -1,6 +1,5 @@
-import itemJson from './droplist.json' assert {type: 'json'};
+import itemJson from './droplist.json' with { type: "json" };
 const ALLITEMS = itemJson.droplist
-
 
 //primer renderizada de todos los items
 
