@@ -2,7 +2,7 @@ import itemJson from './droplist.json' with { type: "json" };
 const ALLITEMS = itemJson.droplist;
 
 // Construccion de carta de objeto
-function renderItemCard(item) {
+function renderWeaponCard(item) {
     return `
         <div id="item${item.id}" class="item-card">
             <div id="box-top">
@@ -11,7 +11,6 @@ function renderItemCard(item) {
                     <p id="drop-name" class="${item.rarity}">${item.name}</p>
                     <p id="drop-material" class="${item.rarity}">${item.material}</p>
                 </div>
-                <img src="" alt="" id="drop-x">
             </div>
             <div id="box-bottom">
                 <div id="drop-card">
@@ -25,20 +24,62 @@ function renderItemCard(item) {
                     <div id="secondary">
                         <p id="drop-info-secondary" class="white-text"> Category: ${item.cat}</p>
                         <p id="drop-info-secondary" class="white-text"> Attack speed: ${item.speed}</p>
+                        ${item.range ? `<p id="drop-info-secondary" class="white-text"> Range: ${item.range}</p>` : ""}
                         <p id="drop-info-secondary" class="white-text"> Durability: ${item.dur}/${item.dur}</p>
                         <p id="drop-info-secondary" class="white-text"> Weight: ${item.wei} Kgs</p>
                         <p id="drop-info-secondary" class="yellow-text">Item level ${item.itemlvl}</p>
                         <p id="drop-info-secondary" class="gray-text"> Requires ${item.sub} Level ${item.reqlvl}</p>
                     </div>
                     <div id="bonus">
-                        <p id="drop-info-secondary" class="bonus-text"> ${item.bonus0}</p>
-                        <p id="drop-info-secondary" class="bonus-text"> ${item.bonus1}</p>
-                        <p id="drop-info-secondary" class="bonus-text"> ${item.bonus2}</p>
+                        ${item.crit ? `<p id="drop-info-secondary" class="bonus-text"> Critical chance +${item.crit}%</p>` : ''}
+                        ${item.bonus0 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus0}</p>` : ''}
+                        ${item.bonus1 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus1}</p>` : ''}
+                        ${item.bonus2 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus2}</p>` : ''}
                         ${item.bonus3 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus3}</p>` : ''}
-                        ${item.bonus4 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus4}</p>` : ''}
                         <div id="enhancement">
                             <p id="drop-info-secondary" class="${item.isenhanced}"> ${item.socket1}</p>
                             <img src="${item.socketthumbnail1}" alt="">
+                        </div>
+                    </div>
+                    <p id="drop-info-secondary" class="${item.rarity}">${item.rarity}</p>
+                </div>
+            </div>
+            <p id="price">${item.owner} - ${item.price} Mgs</p>
+        </div>
+    `;
+}
+
+function renderArmorCard(item) {
+    return `
+        <div id="item${item.id}" class="item-card">
+            <div id="box-top">
+                <img src="${item.thumbnail}" alt="" id="drop-thumbnail">
+                <div id="text-box"> 
+                    <p id="drop-name" class="${item.rarity}">${item.name}</p>
+                    <p id="drop-material" class="${item.rarity}">${item.material}</p>
+                </div>
+            </div>
+            <div id="box-bottom">
+                <div id="drop-card">
+                    <p id="drop-info-armor" class="yellow-text">Armor: ${item.armor} (+${item.armplus})</p>
+                    <div id="secondary">
+                        <p id="drop-info-secondary" class="white-text"> Category: ${item.cat}</p>
+                        <p id="drop-info-secondary" class="white-text"> Attack speed: ${item.speed}</p>
+                        <p id="drop-info-secondary" class="white-text"> Durability: ${item.dur}/${item.dur}</p>
+                        <p id="drop-info-secondary" class="white-text"> Weight: ${item.wei} Kgs</p>
+                        <p id="drop-info-secondary" class="yellow-text">Item level ${item.itemlvl}</p>
+                        <p id="drop-info-secondary" class="gray-text"> Requires ${item.sub} Level ${item.reqlvl}</p>
+                    </div>
+                    <div id="bonus">
+                        ${item.bonus0 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus0}</p>` : ''}
+                        ${item.bonus1 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus1}</p>` : ''}
+                        ${item.bonus2 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus2}</p>` : ''}
+                        ${item.bonus3 ? `<p id="drop-info-secondary" class="bonus-text"> ${item.bonus3}</p>` : ''}
+                        <div id="enhancement">
+                            ${item.enha0 ? `<p id="drop-info-secondary" class="${item.isenhanced}"> ${item.enha0}</p> <img src="${item.enhathumbnail0}" alt="">` : ''}
+                            ${item.enha1 ? `<p id="drop-info-secondary" class="${item.isenhanced}"> ${item.enha1}</p> <img src="${item.enhathumbnail1}" alt="">` : ''}
+                            ${item.enha2 ? `<p id="drop-info-secondary" class="${item.isenhanced}"> ${item.enha2}</p> <img src="${item.enhathumbnail2}" alt="">` : ''}
+                            ${item.enha2 ? `<p id="drop-info-secondary" class="${item.isenhanced}"> ${item.enha2}</p> <img src="${item.enhathumbnail2}" alt="">` : ''}
                         </div>
                     </div>
                     <p id="drop-info-secondary" class="${item.rarity}">${item.rarity}</p>
@@ -53,16 +94,26 @@ function renderItemCard(item) {
 function renderAll() {
     document.getElementById("drops-for-sale").innerHTML = '';
     ALLITEMS.forEach(item => {
-        document.getElementById(item.setid).innerHTML += renderItemCard(item);
+        if (item.type === "weapon") {
+            document.getElementById(item.setid).innerHTML += renderWeaponCard(item);
+        } else if (item.type === "armor") {
+            document.getElementById(item.setid).innerHTML += renderArmorCard(item);
+        }
     });
 }
+
+renderAll()
 
 // Renderizar objetos por su clase o sublcase
 function renderItems(sub1, sub2) {
     document.getElementById("drops-for-sale").innerHTML = '';
     ALLITEMS.forEach(item => {
         if (item.sub === sub1 || item.sub === sub2) {
-            document.getElementById(item.setid).innerHTML += renderItemCard(item);
+            if (item.type === "weapon") {
+                document.getElementById(item.setid).innerHTML += renderWeaponCard(item);
+            } else if (item.type === "armor") {
+                document.getElementById(item.setid).innerHTML += renderArmorCard(item);
+            }
         }
     });
 }
