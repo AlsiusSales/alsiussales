@@ -1,5 +1,16 @@
-import itemJson from './droplist.json' with { type: "json" };
-const ALLITEMS = itemJson.droplist;
+async function fetchData() {
+    try {
+        const response = await fetch('https://us-central1-alsiussales.cloudfunctions.net/AccessDrops');
+        const data = await response.json();
+        let ALLITEMS = data[0];
+        console.log(ALLITEMS)
+        return ALLITEMS;
+    }
+    
+    catch (error) { console.error('F', error); }
+}
+
+fetchData();
 
 // Construccion de carta de objeto
 function renderWeaponCard(item) {
