@@ -1,16 +1,18 @@
+let ALLITEMS = [];
+
 async function fetchData() {
     try {
         const response = await fetch('https://us-central1-alsiussales.cloudfunctions.net/AccessDrops');
         const data = await response.json();
-        let ALLITEMS = data[0];
-        console.log(ALLITEMS)
+        ALLITEMS = data[0];
         return ALLITEMS;
     }
     
     catch (error) { console.error('F', error); }
 }
 
-fetchData();
+
+
 
 // Construccion de carta de objeto
 function renderWeaponCard(item) {
@@ -103,6 +105,7 @@ function renderArmorCard(item) {
 
 // Renderizar todos los objetos
 function renderAll() {
+    fetchData();
     document.getElementById("drops-for-sale").innerHTML = '';
     ALLITEMS.forEach(item => {
         if (item.type === "weapon") {
