@@ -1,18 +1,16 @@
-let ALLITEMS = [];
+let ALLITEMS = null;
 
-async function fetchData() {
+function fetchData() {
     try {
-        const response = await fetch('https://us-central1-alsiussales.cloudfunctions.net/AccessDrops');
-        const data = await response.json();
-        ALLITEMS = data[0];
-        return ALLITEMS;
+        return fetch("https://us-central1-alsiussales.cloudfunctions.net/AccessDrops")
+            .then(response => response.json())
+            .then(data => {
+                ALLITEMS = data[0].droplist;
+                return data;
+            });
     }
-    
     catch (error) { console.error('F', error); }
 }
-
-
-
 
 // Construccion de carta de objeto
 function renderWeaponCard(item) {
@@ -105,7 +103,6 @@ function renderArmorCard(item) {
 
 // Renderizar todos los objetos
 function renderAll() {
-    fetchData();
     document.getElementById("drops-for-sale").innerHTML = '';
     ALLITEMS.forEach(item => {
         if (item.type === "weapon") {
@@ -115,9 +112,6 @@ function renderAll() {
         }
     });
 }
-
-renderAll()
-
 // Renderizar objetos por su clase o sublcase
 function renderItems(sub1, sub2) {
     document.getElementById("drops-for-sale").innerHTML = '';
@@ -132,11 +126,17 @@ function renderItems(sub1, sub2) {
     });
 }
 
-// Event listeners fpara botones de filtro
-document.getElementById("button-all").addEventListener("click", () => renderAll());
-document.getElementById("button-barbarian").addEventListener("click", () => renderItems("Barbarian", "Warrior"));
-document.getElementById("button-knight").addEventListener("click", () => renderItems("Knight", "Warrior"));
-document.getElementById("button-conjurer").addEventListener("click", () => renderItems("Conjurer" , "Mage"));
-document.getElementById("button-warlock").addEventListener("click", () => renderItems("Warlock", "Mage"));
-document.getElementById("button-hunter").addEventListener("click", () => renderItems("Hunter", "Archer"));
-document.getElementById("button-marksman").addEventListener("click", () => renderItems("Marksman", "Archer"));
+
+fetchData()
+    .then(() => {
+        // Render inicial
+        renderAll()
+        // Event listeners fpara botones de filtro
+        document.getElementById("button-all").addEventListener("click", () => renderAll());
+        document.getElementById("button-barbarian").addEventListener("click", () => renderItems("Barbarian", "Warrior"));
+        document.getElementById("button-knight").addEventListener("click", () => renderItems("Knight", "Warrior"));
+        document.getElementById("button-conjurer").addEventListener("click", () => renderItems("Conjurer" , "Mage"));
+        document.getElementById("button-warlock").addEventListener("click", () => renderItems("Warlock", "Mage"));
+        document.getElementById("button-hunter").addEventListener("click", () => renderItems("Hunter", "Archer"));
+        document.getElementById("button-marksman").addEventListener("click", () => renderItems("Marksman", "Archer"));
+    })
