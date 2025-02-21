@@ -1,5 +1,16 @@
-import itemJson from './droplist.json' with { type: "json" };
-const ALLITEMS = itemJson.droplist;
+let ALLITEMS = null;
+
+function fetchData() {
+    try {
+        return fetch("https://us-central1-alsiussales.cloudfunctions.net/AccessDrops")
+            .then(response => response.json())
+            .then(data => {
+                ALLITEMS = data[0].droplist;
+                return data;
+            });
+    }
+    catch (error) { console.error('F', error); }
+}
 
 // Construccion de carta de objeto
 function renderWeaponCard(item) {
@@ -101,9 +112,6 @@ function renderAll() {
         }
     });
 }
-
-renderAll()
-
 // Renderizar objetos por su clase o sublcase
 function renderItems(sub1, sub2) {
     document.getElementById("drops-for-sale").innerHTML = '';
@@ -118,11 +126,17 @@ function renderItems(sub1, sub2) {
     });
 }
 
-// Event listeners fpara botones de filtro
-document.getElementById("button-all").addEventListener("click", () => renderAll());
-document.getElementById("button-barbarian").addEventListener("click", () => renderItems("Barbarian", "Warrior"));
-document.getElementById("button-knight").addEventListener("click", () => renderItems("Knight", "Warrior"));
-document.getElementById("button-conjurer").addEventListener("click", () => renderItems("Conjurer" , "Mage"));
-document.getElementById("button-warlock").addEventListener("click", () => renderItems("Warlock", "Mage"));
-document.getElementById("button-hunter").addEventListener("click", () => renderItems("Hunter", "Archer"));
-document.getElementById("button-marksman").addEventListener("click", () => renderItems("Marksman", "Archer"));
+
+fetchData()
+    .then(() => {
+        // Render inicial
+        renderAll()
+        // Event listeners fpara botones de filtro
+        document.getElementById("button-all").addEventListener("click", () => renderAll());
+        document.getElementById("button-barbarian").addEventListener("click", () => renderItems("Barbarian", "Warrior"));
+        document.getElementById("button-knight").addEventListener("click", () => renderItems("Knight", "Warrior"));
+        document.getElementById("button-conjurer").addEventListener("click", () => renderItems("Conjurer" , "Mage"));
+        document.getElementById("button-warlock").addEventListener("click", () => renderItems("Warlock", "Mage"));
+        document.getElementById("button-hunter").addEventListener("click", () => renderItems("Hunter", "Archer"));
+        document.getElementById("button-marksman").addEventListener("click", () => renderItems("Marksman", "Archer"));
+    })
