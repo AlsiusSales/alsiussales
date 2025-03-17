@@ -126,7 +126,6 @@ function renderItems(sub1, sub2) {
     });
 }
 
-
 fetchData()
     .then(() => {
         // Render inicial

@@ -169,7 +169,7 @@ h2{
 .item-card{
     margin: 5px;
 }
-p{
+.item-card p{
     font-family: "Candara", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -292,7 +292,7 @@ p{
     color: #7dff81;
 }
 .special{
-    color: #EE4000;
+    color: #FF8;
 }
 .normal{
     color: #FFF;
