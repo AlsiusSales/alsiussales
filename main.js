@@ -190,8 +190,25 @@ document.getElementById('selectGem').addEventListener("change", function(event) 
         myNewItem.isenhanced = 'enhancedyes';
         myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
     createItem(myNewItem);
+    }else if (event.target.value === 'velatq'){
+        myNewItem.socket0 = 'Velocidad de ataque';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
+    }else if (event.target.value === 'velinv'){
+        myNewItem.socket0 = 'Velocidad de invocacion';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
     }
 });
+
+document.getElementById('selectLvl').addEventListener("input", function(event) {
+
+    myNewItem.reqlvl = event.target.value;
+    
+    createItem(myNewItem);
+  });
 
 document.getElementById('selectBonusDmg').addEventListener("input", function(event) {
 
