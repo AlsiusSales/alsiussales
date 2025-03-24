@@ -37,8 +37,8 @@ function renderWeaponTemplate(item) {
                         ${myNewItem.bonus2 ? `<p id="drop-info-secondary" class="bonus-text"> ${myNewItem.bonus2} +${myNewItem.bonus2num}</p>` : ''}
                         ${myNewItem.bonus3 ? `<p id="drop-info-secondary" class="bonus-text"> ${myNewItem.bonus3} +${myNewItem.bonus3num}</p>` : ''}
                         <div id="enhancement">
-                            ${myNewItem.hassocket ? `<p id="drop-info-secondary" class="${myNewItem.isenhanced}"> ${myNewItem.socket0}</p>` : ''}
-                            ${myNewItem.hassocket ? `<img src="${myNewItem.socketthumbnail1}" alt="">` : ''}
+                            ${myNewItem.socket0 ? `<p id="drop-info-secondary" class="${myNewItem.isenhanced}"> ${myNewItem.socket0} ${myNewItem.socket0num ? `+${myNewItem.socket0num}` :''} </p>` : ''}
+                            ${myNewItem.socket0 ? `<img src="${myNewItem.socketthumbnail1}" alt="">` : ''}
                         </div>
                     </div>
                     <p id="drop-info-secondary" class="${myNewItem.rarity}">${myNewItem.rarity !== 'normal' ? myNewItem.rarity : ''}</p>
@@ -136,13 +136,61 @@ handleDropdownChange('selectBonus3', 'bonus3', {
     atributoclase: 'Atributo de clase'
 });
 
+handleDropdownChange('selectGem', 'socket0', {
+    vacia: 'Muesca vacia',
+    elec: 'Daño electrico',
+    fuego: 'Daño de fuego',
+    hielo: 'Daño de hielo',
+    cortante: 'Daño cortante',
+    punzante: 'Daño punzante',
+    aplas: 'Daño aplastante',
+    crit: 'Chance de critico'
+});
 
 
-document.getElementById('selectLvl').addEventListener("input", function(event) {
-  
-    myNewItem.reqlvl = event.target.value;
+document.getElementById('selectGem').addEventListener("change", function(event) {
     
+    if(event.target.value === 'vacia'){
+        myNewItem.socket0 = 'Muesca vacia';
+        myNewItem.isenhanced = 'enhancedno';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement-empty.png";
     createItem(myNewItem);
+    }else if (event.target.value === 'elec'){
+        myNewItem.socket0 = 'Daño electrico';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
+    }else if (event.target.value === 'fuego'){
+        myNewItem.socket0 = 'Daño de fuego';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
+    }else if (event.target.value === 'hielo'){
+        myNewItem.socket0 = 'Daño de hielo';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
+    }else if (event.target.value === 'cortante'){
+        myNewItem.socket0 = 'Daño cortante';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
+    }else if (event.target.value === 'punzante'){
+        myNewItem.socket0 = 'Daño punzante';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
+    }else if (event.target.value === 'aplas'){
+        myNewItem.socket0 = 'Daño aplastante';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
+    }else if (event.target.value === 'crit'){
+        myNewItem.socket0 = 'Chance de critico';
+        myNewItem.isenhanced = 'enhancedyes';
+        myNewItem.socketthumbnail1 = "thumbs/drop-enhancement.png";
+    createItem(myNewItem);
+    }
 });
 
 document.getElementById('selectBonusDmg').addEventListener("input", function(event) {
@@ -183,6 +231,13 @@ document.getElementById('selectBonus2Num').addEventListener("input", function(ev
 document.getElementById('selectBonus3Num').addEventListener("input", function(event) {
   
     myNewItem.bonus3num = event.target.value;
+    
+    createItem(myNewItem);
+});
+
+document.getElementById('selectGemDmgNum').addEventListener("input", function(event) {
+  
+    myNewItem.socket0num = event.target.value;
     
     createItem(myNewItem);
 });
