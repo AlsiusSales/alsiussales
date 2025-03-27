@@ -6,76 +6,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div style="display: flex; flex-direction: row;">
+    <nav>
+        <ul>
+            <li>
+                <a href="">
+                    <img id="logoalsius" src="thumbs/logo AS.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="header">
+        <h2>¿Que quieres vender?</h2>
+    </div>
+    <div id="item-creator">
         <!-- Select Item -->
-        <div class="select-sim" id="select-item">
-            <div class="options">
-                <div class="option">
-                    <input type="radio" name="item" value="" id="item-" checked />
-                    <label for="item-">
-                        <img src="" alt="" /> ¿Qué quieres vender?
-                    </label>
-                </div>
-                <div class="option">
-                    <input type="radio" name="item" value="espada-caballero-elite" id="item-espada-caballero-elite" />
-                    <label for="item-espada-caballero-elite">
-                        <img src="thumbs/weapons/72358-Icon item weapon sword01.png" alt="" height="40" width="40" /> Espada de caballero elite
-                    </label>
-                </div>
-                <div class="option">
-                    <input type="radio" name="item" value="lanza-caballero-elite" id="item-lanza-caballero-elite" />
-                    <label for="item-lanza-caballero-elite">
-                        <img src="thumbs/weapons/72360-Icon item weapon spear01.png" alt="" height="40" width="40" /> Lanza de caballero elite
-                    </label>
-                </div>
-                <div class="option">
-                    <input type="radio" name="item" value="hacha-caballero-elite" id="item-hacha-caballero-elite" />
-                    <label for="item-hacha-caballero-elite">
-                        <img src="thumbs/weapons/72367-Icon item weapon axe01.png" alt="" height="40" width="40" /> Hacha de caballero elite
-                    </label>
-                </div>
-                <div class="option">
-                    <input type="radio" name="item" value="martillo-caballero-elite" id="item-martillo-caballero-elite" />
-                    <label for="item-martillo-caballero-elite">
-                        <img src="thumbs/weapons/72365-Icon item weapon hammer02.png" alt="" height="40" width="40" /> Martillo de caballero elite
-                    </label>
-                </div>
+        <select id="itemSelector">
+            <option value="espada-caballero-elite">Espada de caballero elite</option>
+            <option value="lanza-caballero-elite">Lanza de caballero elite</option>
+            <option value="hacha-caballero-elite">Hacha de caballero elite</option>
+            <option value="martillo-caballero-elite">Martillo de caballero elite</option>
+        </select>
+        <div id="item-creator-container">
+            <!-- Item Template -->
+            <div id="item-creator-template">
+                <div id="item-template"></div>
             </div>
-        </div>
 
-        <!-- Item Template -->
-        <div>
-            <div id="item-template"></div>
-            <button id="item-check">¿Item?</button>
-        </div>
-
-        <!-- Dropdowns and Inputs -->
-        <div>
-            <select id="selectRarity" class="dropdown">
+            <!-- Dropdowns and Inputs -->
+            <div id="item-creator-inputs">
+            <div class="input-group">
+                <select id="selectRarity" class="dropdown" style="width:100%;">
                 <option value="default">Rareza</option>
-                <option value="especial">Especial</option>
-                <option value="magico">Mágico</option>
-                <option value="epico">Épico</option>
-                <option value="legendario">Legendario</option>
-            </select>
-
-            <select id="selectMaterial" class="dropdown">
-                <option value="">Material</option>
-                <option value="hierro">Hierro</option>
-                <option value="acero">Acero</option>
-                <option value="aceroFino">Acero fino</option>
-                <option value="aleacion">Aleación de acero</option>
-                <option value="xyme">Xymerald</option>
-            </select>
-
-            <select id="selectQual" class="dropdown">
-                <option value="">Calidad</option>
-                <option value="normal">Normal</option>
-                <option value="mejorado">Mejorado</option>
-                <option value="superior">Superior</option>
-                <option value="gran">Gran</option>
-                <option value="maestre">Maestre</option>
-            </select>
+                <option value="special">Especial</option>
+                <option value="magical">Mágico</option>
+                <option value="epic">Épico</option>
+                <option value="legendary">Legendario</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <select id="selectMaterial" class="dropdown" style="width:100%;">
+                    <option value="">Material</option>
+                    <option value="hierro">Hierro</option>
+                    <option value="acero">Acero</option>
+                    <option value="aceroFino">Acero fino</option>
+                    <option value="aleacion">Aleación de acero</option>
+                    <option value="xyme">Xymerald</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <select id="selectQual" class="dropdown" style="width:100%;">
+                    <option value="">Calidad</option>
+                    <option value="normal">Normal</option>
+                    <option value="mejorado">Mejorado</option>
+                    <option value="superior">Superior</option>
+                    <option value="gran">Gran</option>
+                    <option value="maestre">Maestre</option>
+                </select>
+            </div>
 
             <div class="input-group">
                 <p>Nivel</p>
@@ -93,8 +81,7 @@
             </div>
 
             <div class="input-group">
-                <p>Daño físico</p>
-                <select id="selectFisDmg" class="dropdown">
+                <select id="selectFisDmg" class="dropdown" style="width:100%;">
                     <option value="">Elige el daño físico</option>
                     <option value="punzante">Punzante</option>
                     <option value="cortante">Cortante</option>
@@ -104,8 +91,7 @@
             </div>
 
             <div class="input-group">
-                <p>Daño mágico</p>
-                <select id="selectMagDmg" class="dropdown">
+                <select id="selectMagDmg" class="dropdown" style="width:100%;">
                     <option value="">Elige el daño mágico</option>
                     <option value="fuego">Fuego</option>
                     <option value="elec">Electricidad</option>
@@ -115,8 +101,7 @@
             </div>
 
             <div class="input-group">
-                <p>Bonus extra 1</p>
-                <select id="selectBonus2" class="dropdown">
+                <select id="selectBonus2" class="dropdown" style="width:100%;">
                     <option value="">Bonus extra 1</option>
                     <option value="velocidadataque">Velocidad de ataque</option>
                     <option value="velocidadinvocacion">Velocidad de invocación</option>
@@ -133,8 +118,7 @@
             </div>
 
             <div class="input-group">
-                <p>Bonus extra 2</p>
-                <select id="selectBonus3" class="dropdown">
+                <select id="selectBonus3" class="dropdown" style="width:100%;">
                     <option value="">Bonus extra 2</option>
                     <option value="velocidadataque">Velocidad de ataque</option>
                     <option value="velocidadinvocacion">Velocidad de invocación</option>
@@ -151,8 +135,7 @@
             </div>
 
             <div class="input-group">
-                <p>Gema</p>
-                <select id="selectGem" class="dropdown">
+                <select id="selectGem" class="dropdown" style="width:100%;">
                     <option value="">Gema</option>
                     <option value="vacia">Muesca vacia</option>
                     <option value="elec">Daño electrico</option>
@@ -167,8 +150,10 @@
                 </select>
                 <input type="text" id="selectGemDmgNum" />
             </div>
+            </div>
         </div>
-    </div>
+    </div>  
+    <button id="item-check">¿myNewItem?</button>
     <script type="module" src="main.js"></script>
 </body>
 </html>

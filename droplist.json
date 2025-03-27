@@ -27,7 +27,7 @@
 "isenhanced":"enhancedyes",
 "socket1":"Attack speed 7%",
 "socketthumbnail1":"thumbs/drop-enhancement.png",
-"rarity":"Epic",
+"rarity":"epico",
 "dropof":"Reward",
 "price":"3000",
 "owner":"Prentixx"
@@ -62,7 +62,7 @@
 "enha1":"Resist piercing damage +2%",
 "enhathumbnail1":"thumbs/drop-enhancement.png",
 "enhathumbnail2":"thumbs/drop-enhancement-empty.png",
-"rarity":"Legendary",
+"rarity":"legendario",
 "isbounded":"Bounded to character",
 "color":"",
 "dropof":"Reward",

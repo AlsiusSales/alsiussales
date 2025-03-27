@@ -18,10 +18,9 @@ function renderWeaponTemplate(item) {
                 <div id="drop-card">
                     <p id="drop-info-armor" class="yellow-text">Daño: (+${myNewItem.bonusdmg})</p>
                     <div id="damagepanel">
-                        <img id="dmgtype-thumbnail" src="${myNewItem.dmgtype0}" alt=""> 
-                        <p id="dmgnumber" class="yellow-text">${myNewItem.dmg0}</p>
-                        <img id="dmgtype-thumbnail" src="${myNewItem.dmgtype1}" alt=""> 
-                        <p id="dmgnumber" class="yellow-text">${myNewItem.dmg1}</p>
+                        ${myNewItem.dmgtype0 ? `<img id="dmgtype-thumbnail" src="${myNewItem.dmgtype0}" alt=""> <p id="dmgnumber" class="yellow-text">${myNewItem.dmg0}</p>` : ""}
+                        ${myNewItem.dmgtype1 ? `<img id="dmgtype-thumbnail" src="${myNewItem.dmgtype1}" alt=""> <p id="dmgnumber" class="yellow-text">${myNewItem.dmg1}</p>` : ""}
+                        ${myNewItem.dmgtype2 ? `<img id="dmgtype-thumbnail" src="${myNewItem.dmgtype2}" alt=""> <p id="dmgnumber" class="yellow-text">${myNewItem.dmg2}</p>` : ""}
                     </div>
                     <div id="secondary">
                         <p id="drop-info-secondary" class="white-text"> Categoria: ${myNewItem.cat}</p>
@@ -52,17 +51,28 @@ function createItem(item){
     document.getElementById("item-template").innerHTML = renderWeaponTemplate(item);
 }
 
-function updateItem(item){
-    myNewItem = templates[item];
-    createItem(item);
+function updateItem(item) {
+    // Crear una copia profunda del objeto seleccionado
+    myNewItem = structuredClone(templates[item]); // Alternativa moderna
+    // Si structuredClone no está disponible, usa:
+    // myNewItem = JSON.parse(JSON.stringify(templates[item]));
+    createItem(myNewItem);
 }
 
 updateItem(0);
 
-document.getElementById("item-espada-caballero-elite").addEventListener("click", () => updateItem(0));
-document.getElementById("item-lanza-caballero-elite").addEventListener("click", () => updateItem(1));
-document.getElementById("item-hacha-caballero-elite").addEventListener("click", () => updateItem(2));
-document.getElementById("item-martillo-caballero-elite").addEventListener("click", () => updateItem(3));
+document.getElementById("itemSelector").addEventListener("change", function (event) {
+    const selectedValue = event.target.value;
+    if (selectedValue === "espada-caballero-elite") {
+        updateItem(0);
+    } else if (selectedValue === "lanza-caballero-elite") {
+        updateItem(1);
+    } else if (selectedValue === "hacha-caballero-elite") {
+        updateItem(2);
+    } else if (selectedValue === "martillo-caballero-elite") {
+        updateItem(3);
+    }
+});
 
 document.getElementById("item-check").addEventListener("click", () => console.log(myNewItem));
 
@@ -76,10 +86,10 @@ function handleDropdownChange(elementId, property, options) {
 
 // Dropdown handlers
 handleDropdownChange('selectRarity', 'rarity', {
-    especial: 'especial',
-    magico: 'magico',
-    epico: 'epico',
-    legendario: 'legendario'
+    special: 'special',
+    magical: 'magical',
+    epic: 'epic',
+    legendary: 'legendary'
 });
 
 handleDropdownChange('selectMaterial', 'material', {
@@ -208,7 +218,7 @@ document.getElementById('selectLvl').addEventListener("input", function(event) {
     myNewItem.reqlvl = event.target.value;
     
     createItem(myNewItem);
-  });
+});
 
 document.getElementById('selectBonusDmg').addEventListener("input", function(event) {
 

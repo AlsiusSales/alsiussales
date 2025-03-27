@@ -148,14 +148,6 @@ h2{
     font-size: 13px;
     padding-top: 15px;
 }
-h1{
-        padding-top: 100px;
-        text-align: center;
-        font-size: 40px;
-        font-Family: "Candara", sans-serif;
-        font-weight: 700;
-        color: #FFF;
-}
 h2{
         padding-top: 150px;
     text-align: center;
@@ -282,16 +274,16 @@ h2{
     grid-template-columns: 92% 8%;
     align-items: center;
 }
-.legendario{
+.legendary{
     color: #EE4000;
 }
-.epico{
+.epic{
     color: #e88cff;
 }
-.magico{
+.magical{
     color: #7dff81;
 }
-.especial{
+.special{
     color: #FF8;
 }
 .normal{
@@ -330,94 +322,81 @@ h2{
 }
 
 /* General Styles */
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #222;
-    color: #fff;
-}
 
-.select-sim {
-    width: 350px;
+.input-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
     height: 40px;
-    position: relative;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.select-sim::after {
-    content: "▼";
-    font-size: 0.5em;
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-}
-
-.select-sim:hover {
-    overflow: visible;
-}
-
-.options {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 10;
-}
-
-.select-sim:hover .options {
-    display: block;
-}
-
-.option {
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.option:hover {
-    background-color: #f9f9f9;
-}
-
-.option img {
-    margin-right: 10px;
-}
-
-.dropdown {
-    width: 150px;
     background-color: #333;
-    color: #fff;
-    margin-bottom: 10px;
+    color: #FFF;
+    font-family: "Candara", sans-serif;
 }
-
-.dropdown option {
-    background-color: #333;
-    color: #fff;
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.input-group p {
-    margin: 0;
-    width: 150px;
-}
-
-.input-group input {
-    width: 50px;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
+.input-group input{
+    width: 40px;
+    height: 40px;
+    background-color: #555;
+    border: 0px;
+    color: #FFF;
     text-align: center;
+}
+.input-group p{
+    font-size: 15px;
+    margin: 0px 9px;
+}
+.dropdown{
+    height: 40px;
+    background-color: #333;
+    color: #FFF;
+    border: 0px;
+    outline: 0px;
+    margin: 0px 5px;
+    font-size: 15px;
+    font-family: "Candara", sans-serif;
+}
+
+/*creation page*/
+
+#item-creator{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+h1{
+    padding: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-Family: "Candara", sans-serif;
+    font-weight: 700;
+    color: #FFF;
+}
+#itemSelector{
+    height: 40px;
+    width: 300px;
+    background-color: #333;
+    color: #FFF;
+    border: 0px;
+    outline: 0px;
+    margin-bottom: 20px;
+}
+#itemSelector option{
+    height: 50px;
+}   
+#item-creator-template{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#item-creator-inputs{
+    width: 300px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
